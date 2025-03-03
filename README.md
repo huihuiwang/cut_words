@@ -25,5 +25,5 @@ print('/'.join(jieba.cut('「台中」正确应该不会被切开', HMM=False)))
 「/台/中/」/正确/应该/不会/被/切开
 jieba.suggest_freq('台中', True)
 69
-print('/'.join(jieba.cut('「台中」正确应该不会被切开', HMM=False)))
+print('/'.join(jieba.cut('「台中」正确应该不会被切开', HMM=False))
 「/台中/」/正确/应该/不会/被/切开

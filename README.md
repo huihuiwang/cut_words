@@ -14,3 +14,16 @@ seg_list = jieba.cut_for_search("小明硕士毕业于中国科学院计算所�
 print(", ".join(seg_list))
 
 下载你所需要的词典，然后覆盖 jieba/dict.txt 即可；或者用 jieba.set_dictionary('data/dict.txt.big')
+
+>>> print('/'.join(jieba.cut('如果放到post中将出错。', HMM=False)))
+如果/放到/post/中将/出错/。
+>>> jieba.suggest_freq(('中', '将'), True)
+494
+>>> print('/'.join(jieba.cut('如果放到post中将出错。', HMM=False)))
+如果/放到/post/中/将/出错/。
+>>> print('/'.join(jieba.cut('「台中」正确应该不会被切开', HMM=False)))
+「/台/中/」/正确/应该/不会/被/切开
+>>> jieba.suggest_freq('台中', True)
+69
+>>> print('/'.join(jieba.cut('「台中」正确应该不会被切开', HMM=False)))
+「/台中/」/正确/应该/不会/被/切开

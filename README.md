@@ -27,3 +27,15 @@ jieba.suggest_freq('台中', True)
 69
 print('/'.join(jieba.cut('「台中」正确应该不会被切开', HMM=False))
 「/台中/」/正确/应该/不会/被/切开
+
+import jieba.analyse
+
+jieba.analyse.extract_tags(sentence, topK=20, withWeight=False, allowPOS=())
+sentence 为待提取的文本
+topK 为返回几个 TF/IDF 权重最大的关键词，默认值为 20
+withWeight 为是否一并返回关键词权重值，默认值为 False
+allowPOS 仅包括指定词性的词，默认值为空，即不筛选
+jieba.analyse.TFIDF(idf_path=None) 新建 TFIDF 实例，idf_path 为 IDF 频率文件
+
+jieba.analyse.textrank(sentence, topK=20, withWeight=False, allowPOS=('ns', 'n', 'vn', 'v')) 直接使用，接口相同，注意默认过滤词性。
+jieba.analyse.TextRank() 新建自定义 TextRank 实例
